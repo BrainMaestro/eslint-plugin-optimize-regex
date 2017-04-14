@@ -1,7 +1,8 @@
 {
   "name": "eslint-plugin-optimize-regex",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Optimize regex literals",
+  "repository": "BrainMaestro/eslint-plugin-optimize-regex",
   "keywords": [
     "eslint",
     "eslintplugin",
