@@ -1,19 +1,21 @@
 # eslint-plugin-optimize-regex
+[![npm](https://img.shields.io/npm/v/eslint-plugin-optimize-regex.svg)](https://www.npmjs.com/package/eslint-plugin-optimize-regex)
+[![npm](https://img.shields.io/npm/dt/eslint-plugin-optimize-regex.svg)](https://www.npmjs.com/package/eslint-plugin-optimize-regex)
 
-Optimize regex literals
+> Optimize regex literals
 
 ## Installation
 
 You'll first need to install [ESLint](http://eslint.org):
 
 ```
-$ npm i eslint --save-dev
+npm i eslint --save-dev
 ```
 
 Next, install `eslint-plugin-optimize-regex`:
 
 ```
-$ npm install eslint-plugin-eslint-optimize-regex --save-dev
+npm install eslint-plugin-eslint-optimize-regex --save-dev
 ```
 
 **Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin--optimize-regex` globally.
