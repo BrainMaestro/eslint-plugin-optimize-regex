@@ -1,0 +1,27 @@
+{
+  "name": "eslint-plugin-optimize-regex",
+  "version": "0.0.0",
+  "description": "Optimize regex literals",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "author": "Ezinwa Okpoechi",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha tests --recursive"
+  },
+  "dependencies": {
+    "regexp-tree": "^0.0.38",
+    "requireindex": "~1.1.0"
+  },
+  "devDependencies": {
+    "eslint": "~3.9.1",
+    "mocha": "^3.1.2"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "license": "MIT"
+}
