@@ -36,7 +36,7 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "optimize-regex/optimize-regex": "error"
+        "optimize-regex/optimize-regex": "warn"
     }
 }
 ```
