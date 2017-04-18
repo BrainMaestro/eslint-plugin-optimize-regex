@@ -15,10 +15,10 @@ npm i eslint --save-dev
 Next, install `eslint-plugin-optimize-regex`:
 
 ```
-npm install eslint-plugin-eslint-optimize-regex --save-dev
+npm install eslint-plugin-optimize-regex --save-dev
 ```
 
-**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin--optimize-regex` globally.
+**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-optimize-regex` globally.
 
 ## Usage
 
