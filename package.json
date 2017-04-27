@@ -14,10 +14,10 @@
     "test": "mocha tests --recursive"
   },
   "dependencies": {
-    "regexp-tree": "^0.0.38"
+    "regexp-tree": "^0.0.46"
   },
   "devDependencies": {
-    "eslint": "~3.9.1",
+    "eslint": "~3.19.0",
     "mocha": "^3.1.2"
   },
   "engines": {
