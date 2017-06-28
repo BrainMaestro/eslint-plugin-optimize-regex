@@ -16,7 +16,8 @@ var ruleTester = new RuleTester();
 ruleTester.run('optimize-regex', rule, {
   valid: [
     'var foo = /foo/i',
-    'var foo = /foo/mig'
+    'var foo = /foo/mig',
+    'var foo = /\\//',
   ],
 
   invalid: [
