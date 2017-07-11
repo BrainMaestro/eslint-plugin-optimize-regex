@@ -14,7 +14,7 @@ var rule = require('../../../lib/rules/optimize-regex'),
 
 var ruleTester = new RuleTester()
 ruleTester.run('optimize-regex', rule, {
-  valid: ['var foo = /foo/i', 'var foo = /foo/mig', 'var foo = /\\//'],
+  valid: ['var foo = /foo/i', 'var foo = /foo/mig', 'var foo = /\\/\\./'],
 
   invalid: [
     {
@@ -24,9 +24,9 @@ ruleTester.run('optimize-regex', rule, {
         {
           message:
             '/[a-zA-Z_0-9][A-Z_\\da-z]*\\e{1,}/ can be optimized to /\\w+e+/',
-          type: 'Literal',
-        },
-      ],
-    },
-  ],
+          type: 'Literal'
+        }
+      ]
+    }
+  ]
 })
