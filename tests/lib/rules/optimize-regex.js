@@ -14,7 +14,12 @@ var rule = require('../../../lib/rules/optimize-regex'),
 
 var ruleTester = new RuleTester()
 ruleTester.run('optimize-regex', rule, {
-  valid: ['var foo = /foo/i', 'var foo = /foo/mig', 'var foo = /\\/\\./'],
+  valid: [
+    'var foo = /foo/i',
+    'var foo = /foo/mig',
+    'var foo = /\\/\\./',
+    'var foo = /[/\\\\]$/'
+  ],
 
   invalid: [
     {
