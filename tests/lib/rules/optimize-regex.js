@@ -3,22 +3,22 @@
  * @author Ezinwa Okpoechi <brainmaestro@outlook.com>
  */
 
-'use strict'
+'use strict';
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
 var rule = require('../../../lib/rules/optimize-regex'),
-  RuleTester = require('eslint').RuleTester
+  RuleTester = require('eslint').RuleTester;
 
-var ruleTester = new RuleTester()
+var ruleTester = new RuleTester();
 ruleTester.run('optimize-regex', rule, {
   valid: [
-    'var foo = /foo/i',
-    'var foo = /foo/mig',
+    'var foo = /baz/i',
+    'var foo = /bar/mig',
     'var foo = /\\/\\./',
-    'var foo = /[/\\\\]$/'
+    'var foo = /[/\\\\]$/',
   ],
 
   invalid: [
@@ -29,9 +29,17 @@ ruleTester.run('optimize-regex', rule, {
         {
           message:
             '/[a-zA-Z_0-9][A-Z_\\da-z]*\\e{1,}/ can be optimized to /\\w+e+/',
-          type: 'Literal'
-        }
-      ]
-    }
-  ]
-})
+          type: 'Literal',
+        },
+      ],
+      code: 'var re = /foo/',
+      output: 'var re = /fo{2}/',
+      errors: [
+        {
+          message: '/foo/ can be optimized to /fo{2}/',
+          type: 'Literal',
+        },
+      ],
+    },
+  ],
+});

@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-optimize-regex",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Optimize regex literals",
   "repository": "BrainMaestro/eslint-plugin-optimize-regex",
   "keywords": [
@@ -16,11 +16,11 @@
     "test": "mocha tests --recursive"
   },
   "dependencies": {
-    "regexp-tree": "0.0.52"
+    "regexp-tree": "0.0.72"
   },
   "devDependencies": {
-    "eslint": "~3.19.0",
-    "mocha": "^3.1.2"
+    "eslint": "^4.12.1",
+    "mocha": "^4.0.1"
   },
   "engines": {
     "node": ">=6"
