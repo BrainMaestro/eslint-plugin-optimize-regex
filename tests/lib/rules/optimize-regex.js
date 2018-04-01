@@ -19,6 +19,7 @@ ruleTester.run('optimize-regex', rule, {
     'var foo = /bar/mig',
     'var foo = /\\/\\./',
     'var foo = /[/\\\\]$/',
+    'var re = /foo/',
   ],
 
   invalid: [
@@ -29,14 +30,6 @@ ruleTester.run('optimize-regex', rule, {
         {
           message:
             '/[a-zA-Z_0-9][A-Z_\\da-z]*\\e{1,}/ can be optimized to /\\w+e+/',
-          type: 'Literal',
-        },
-      ],
-      code: 'var re = /foo/',
-      output: 'var re = /fo{2}/',
-      errors: [
-        {
-          message: '/foo/ can be optimized to /fo{2}/',
           type: 'Literal',
         },
       ],
