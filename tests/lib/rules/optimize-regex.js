@@ -32,11 +32,11 @@ ruleTester.run('optimize-regex', rule, {
           type: 'Literal',
         },
       ],
-      code: 'var re = /foo/',
-      output: 'var re = /fo{2}/',
+      code: 'var re = /foooooo/',
+      output: 'var re = /fo{6}/',
       errors: [
         {
-          message: '/foo/ can be optimized to /fo{2}/',
+          message: '/foooooo/ can be optimized to /fo{6}/',
           type: 'Literal',
         },
       ],
