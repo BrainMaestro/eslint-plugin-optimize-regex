@@ -19,7 +19,7 @@
     "regexp-tree": "0.0.85"
   },
   "devDependencies": {
-    "eslint": "^4.12.1",
+    "eslint": "^5.0.0",
     "mocha": "^5.2.0"
   },
   "engines": {
