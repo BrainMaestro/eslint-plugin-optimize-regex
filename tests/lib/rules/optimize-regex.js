@@ -32,6 +32,8 @@ ruleTester.run('optimize-regex', rule, {
           type: 'Literal',
         },
       ],
+    },
+    {
       code: 'var re = /foooooo/',
       output: 'var re = /fo{6}/',
       errors: [
