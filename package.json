@@ -16,7 +16,7 @@
     "test": "mocha tests --recursive"
   },
   "dependencies": {
-    "regexp-tree": "0.0.86"
+    "regexp-tree": "0.1.0"
   },
   "devDependencies": {
     "eslint": "^5.0.0",
