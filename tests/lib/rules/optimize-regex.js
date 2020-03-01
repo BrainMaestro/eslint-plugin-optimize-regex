@@ -3,22 +3,42 @@
  * @author Ezinwa Okpoechi <brainmaestro@outlook.com>
  */
 
-'use strict';
+'use strict'
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-var rule = require('../../../lib/rules/optimize-regex'),
-  RuleTester = require('eslint').RuleTester;
+const rule = require('../../../lib/rules/optimize-regex'),
+  {RuleTester} = require('eslint')
 
-var ruleTester = new RuleTester();
+const ruleTester = new RuleTester()
 ruleTester.run('optimize-regex', rule, {
   valid: [
+    'var foo = 5',
     'var foo = /baz/i',
     'var foo = /bar/mig',
     'var foo = /\\/\\./',
     'var foo = /[/\\\\]$/',
+    {
+      code: 'var re = /[0-9]/',
+      output: 'var re = /\\d/',
+      options: [{
+        blacklist: [
+          'charClassToMeta',       // [0-9] -> [\d]
+          'charClassToSingleChar', // [\d] -> \d
+        ]
+      }]
+    },
+    {
+      code: 'var re = /[0-9]/',
+      output: 'var re = /\\d/',
+      options: [{
+        whitelist: [
+          'charCodeToSimpleChar' // Not relevant
+        ]
+      }]
+    },
   ],
 
   invalid: [
@@ -43,5 +63,21 @@ ruleTester.run('optimize-regex', rule, {
         },
       ],
     },
+    {
+      code: 'var re = /[0-9]/',
+      output: 'var re = /\\d/',
+      errors: [
+        {
+          message: '/[0-9]/ can be optimized to /\\d/',
+          type: 'Literal',
+        }
+      ],
+      options: [{
+        whitelist: [
+          'charClassToMeta',       // [0-9] -> [\d]
+          'charClassToSingleChar', // [\d] -> \d
+        ]
+      }]
+    },
   ],
-});
+})

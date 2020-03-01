@@ -43,6 +43,36 @@ Then configure the rules you want to use under the rules section.
 }
 ```
 
+If you wish to add a `whitelist` or `blacklist` array against `regexp-tree`'s
+[transforms](https://github.com/DmitrySoshnikov/regexp-tree/blob/master/src/optimizer/README.md#transforms), you can add them on an objects object:
+
+```json
+{
+    "rules": {
+        "optimize-regex/optimize-regex": ["warn", {
+            "blacklist": ["charClassClassrangesMerge"]
+        }]
+    }
+}
+```
+
+If you want the latter particular settings, you can avoid setting `plugins` and
+`rules` and just use:
+
+```json
+{
+  "extends": ["optimize-regex/recommended"]
+}
+```
+
+Or without the blacklist:
+
+```json
+{
+  "extends": ["optimize-regex/all"]
+}
+```
+
 ## Rules
 
 * [optimize-regex](./docs/rules/optimize-regex.md)
