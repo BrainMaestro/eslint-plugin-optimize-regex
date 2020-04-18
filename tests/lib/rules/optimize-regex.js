@@ -22,7 +22,6 @@ ruleTester.run('optimize-regex', rule, {
     'var foo = /[/\\\\]$/',
     {
       code: 'var re = /[0-9]/',
-      output: 'var re = /\\d/',
       options: [{
         blacklist: [
           'charClassToMeta',       // [0-9] -> [\d]
@@ -32,7 +31,6 @@ ruleTester.run('optimize-regex', rule, {
     },
     {
       code: 'var re = /[0-9]/',
-      output: 'var re = /\\d/',
       options: [{
         whitelist: [
           'charCodeToSimpleChar' // Not relevant
