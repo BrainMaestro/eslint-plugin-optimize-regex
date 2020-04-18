@@ -77,5 +77,20 @@ ruleTester.run('optimize-regex', rule, {
         ]
       }]
     },
+    {
+      code: 'var re = /[0-9]/',
+      output: 'var re = /[\\d]/',
+      errors: [
+        {
+          message: '/[0-9]/ can be optimized to /[\\d]/',
+          type: 'Literal',
+        }
+      ],
+      options: [{
+        blacklist: [
+          'charClassToSingleChar', // [\d] -> \d
+        ]
+      }]
+    },
   ],
 })
