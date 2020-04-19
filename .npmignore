@@ -2,4 +2,7 @@ node_modules
 Dockerfile
 .travis.yml
 .editorconfig
+.nyc_output
+.eslintignore
+.eslintrc.js
 Makefile
