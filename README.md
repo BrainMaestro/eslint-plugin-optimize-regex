@@ -61,7 +61,7 @@ If you want the latter particular settings, you can avoid setting `plugins` and
 
 ```json
 {
-  "extends": ["optimize-regex/recommended"]
+  "extends": ["plugin:optimize-regex/recommended"]
 }
 ```
 
@@ -69,7 +69,7 @@ Or without the blacklist:
 
 ```json
 {
-  "extends": ["optimize-regex/all"]
+  "extends": ["plugin:optimize-regex/all"]
 }
 ```
 
